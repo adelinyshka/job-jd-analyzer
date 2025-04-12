@@ -10,7 +10,7 @@ from collections import Counter
 app = Flask(__name__)
 CORS(app)
 
-# # Load configuration based on the FLASK_ENV environment variable
+# Load configuration based on the FLASK_ENV environment variable
 # if os.environ.get("FLASK_ENV") == "development":
 #     app.config.from_object(DevelopmentConfig)
 # elif os.environ.get("FLASK_ENV") == "testing":
