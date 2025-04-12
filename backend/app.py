@@ -5,9 +5,6 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from collections import Counter
 
-
-nltk.data.path.append('nltk_data')
-
 # from config import DevelopmentConfig, TestingConfig, ProductionConfig
 
 app = Flask(__name__)
