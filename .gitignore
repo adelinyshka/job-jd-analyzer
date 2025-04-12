@@ -1,0 +1,19 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# Build artifacts (React, Vite, etc.)
+build/
+dist/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+
+# Environment variables (if applicable)
+.env
