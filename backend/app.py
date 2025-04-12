@@ -1,25 +1,25 @@
-import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from collections import Counter
+nltk.data.path.append('nltk_data')
 
-from config import DevelopmentConfig, TestingConfig, ProductionConfig
+# from config import DevelopmentConfig, TestingConfig, ProductionConfig
 
 
 app = Flask(__name__)
 CORS(app)
 
 
-# Load configuration based on the FLASK_ENV environment variable
-if os.environ.get("FLASK_ENV") == "development":
-    app.config.from_object(DevelopmentConfig)
-elif os.environ.get("FLASK_ENV") == "testing":
-    app.config.from_object(TestingConfig)
-else:
-    app.config.from_object(ProductionConfig)
+# # Load configuration based on the FLASK_ENV environment variable
+# if os.environ.get("FLASK_ENV") == "development":
+#     app.config.from_object(DevelopmentConfig)
+# elif os.environ.get("FLASK_ENV") == "testing":
+#     app.config.from_object(TestingConfig)
+# else:
+#     app.config.from_object(ProductionConfig)
 
 
 # Predefined skills and frameworks (extend as needed)
@@ -28,13 +28,25 @@ SOFT_SKILLS = {"communication", "teamwork", "leadership", "problem-solving", "ad
 FRAMEWORKS = {"react", "django", "flask", "angular", "vue"}
 
 # Ensure nltk data downloaded
-nltk.download('punkt')
-nltk.download('stopwords')
+nltk.data.path.append('nltk_data')
+
+# nltk.download('punkt', quiet=True)
+# nltk.download('stopwords', quiet=True)
 
 
 @app.route('/', methods=['GET'])
 def home():
-    return "Hello from Flask with Config!"
+    return "Hello from Flask with Config!!!"
+
+
+# # Predefined skills and frameworks (extend as needed)
+# TECH_SKILLS = {"python", "java", "javascript", "typescript", "react", "flask", "django", "sql", "aws", "docker"}
+# SOFT_SKILLS = {"communication", "teamwork", "leadership", "problem-solving", "adaptability"}
+# FRAMEWORKS = {"react", "django", "flask", "angular", "vue"}
+
+# # Ensure nltk data downloaded
+# nltk.download('punkt')
+# nltk.download('stopwords')
 
 
 @app.route('/analyze', methods=['POST'])
