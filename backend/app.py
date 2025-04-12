@@ -5,11 +5,9 @@ app = Flask(__name__)
 CORS(app)  # for cors without errors
 
 
-@app.route('/analyze', methods=['POST'])
-def analyze():
-    data = request.get_json()
-    text = data.get('text', '')
-    return jsonify({"received_text": text})
+@app.route('/', methods=['GET'])
+def home():
+    return "Hello from Flask!"
 
 
 if __name__ == '__main__':
