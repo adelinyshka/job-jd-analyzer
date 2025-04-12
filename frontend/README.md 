@@ -1,0 +1,40 @@
+# Job JD Analyzer
+
+**Job JD Analyzer** is a minimal web app designed to quickly analyze job descriptions. It extracts key skills, technologies, frameworks, and soft skills, making it easier to identify relevant requirements for job applicants.
+
+---
+
+## 🚀 Features
+
+- Analyze job descriptions for:
+  - ✅ **Technical skills**
+  - ✅ **Frameworks and technologies**
+  - ✅ **Soft skills**
+  - ✅ **Frequently repeated keywords**
+- Save analysis history locally for quick review.
+
+---
+
+## 🛠 Tech Stack
+
+**Frontend:**  
+- React
+
+**Backend:**  
+- Python (Flask)  
+- NLTK for text analysis
+
+---
+
+## 📂 Project Structure
+
+```plaintext
+job-jd-analyzer/
+├── backend/              
+│   ├── app.py
+│   └── requirements.txt
+├── frontend/             
+│   ├── package.json
+│   ├── public/
+│   └── src/
+└── README.md
