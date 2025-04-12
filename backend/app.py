@@ -4,14 +4,14 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from collections import Counter
+
+
 nltk.data.path.append('nltk_data')
 
 # from config import DevelopmentConfig, TestingConfig, ProductionConfig
 
-
 app = Flask(__name__)
 CORS(app)
-
 
 # # Load configuration based on the FLASK_ENV environment variable
 # if os.environ.get("FLASK_ENV") == "development":
@@ -29,30 +29,19 @@ FRAMEWORKS = {"react", "django", "flask", "angular", "vue"}
 
 # Ensure nltk data downloaded
 nltk.data.path.append('nltk_data')
-
-# nltk.download('punkt', quiet=True)
-# nltk.download('stopwords', quiet=True)
+nltk.download('punkt', quiet=True)
+nltk.download('stopwords', quiet=True)
 
 
 @app.route('/', methods=['GET'])
 def home():
     return "Hello from Flask with Config!!!"
 
-
-# # Predefined skills and frameworks (extend as needed)
-# TECH_SKILLS = {"python", "java", "javascript", "typescript", "react", "flask", "django", "sql", "aws", "docker"}
-# SOFT_SKILLS = {"communication", "teamwork", "leadership", "problem-solving", "adaptability"}
-# FRAMEWORKS = {"react", "django", "flask", "angular", "vue"}
-
-# # Ensure nltk data downloaded
-# nltk.download('punkt')
-# nltk.download('stopwords')
-
-
 @app.route('/analyze', methods=['POST'])
 def analyze():
     data = request.get_json()
     text = data.get('text', '')
+
     tokens = word_tokenize(text.lower())
 
     words = [w for w in tokens if w.isalpha() and w not in stopwords.words('english')]
@@ -75,4 +64,4 @@ def analyze():
 
 
 if __name__ == '__main__':
-    app.run(port=30000, debug=True)
+    app.run(port=3000, debug=True)
